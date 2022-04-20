@@ -10,7 +10,7 @@ services:
     volumes:
       - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql
   web:
-    image: dhis2/core:2.33.0
+    image: dhis2/core:2.35.8
     volumes:
       - ./config/dhis2_home/dhis.conf:/DHIS2_home/dhis.conf
     environment:
