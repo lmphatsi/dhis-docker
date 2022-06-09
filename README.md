@@ -2,7 +2,7 @@
 
 <h1>DHIS2 on docker</h1>
 This repo contains a number of docker-compose files to help spin up dockerised dhis2 setups with ease. 
-<h2>A. Setting a training instance</h2>
+<h2>A. Setting up a training instance</h2>
 Assuming you have installed docker and docker-compose on your host machine, follow the steps below. 
 <ol>
 <li>
