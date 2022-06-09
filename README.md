@@ -22,7 +22,7 @@ Assuming you have installed docker and docker-compose on your host machine, foll
 Quit: <pre><code>\q</code></pre>
 </li>
 <li>Restore the db dump into the empty dhis db
-<pre><code>psql -U postgres dhis_lsmoh_235_8 < /festere/dhis_db_backup_228_07_06_2022_02_10_01</code></pre>
+<pre><code>psql -U postgres dhis_lsmoh_235_8 < /festere/dhis_db_backup_228_07_06_2022_02_10_01.sql</code></pre>
 And wait ... or better yet, grab a cup of coffee.
 
 </li>
