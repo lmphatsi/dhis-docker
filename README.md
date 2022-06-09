@@ -11,7 +11,7 @@ Assuming you have installed docker and docker-compose on your host machine, foll
 <li>Launch the base dhis2 setup. This will spin up two containers: dhis-docker_web and dhis-docker_db. <pre><code>docker-compose -f docker-compose-training-live-db.yml up</code></pre></li>
 <li>When both containers are up, a base dhis2 instance should be accessible at: <pre><code>http://localhost:8080</code></pre></li>
 <li>Go into the db container and create a role and an empty database.
-<pre><code>docker exec -it dhis-docker_db bash</code></pre>
+<pre><code>docker exec -it dhis-docker_db_1 bash</code></pre>
 <pre><code>psql -U postgres</code></pre>
 <pre><code>CREATE DATABASE dhis_lsmoh_235_8;</code></pre>
 <pre><code>CREATE ROLE dhis WITH SUPERUSER;</code></pre>
