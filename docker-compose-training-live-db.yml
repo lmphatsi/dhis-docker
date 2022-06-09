@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       ### location of db dump on host: mount point on docker container
-      - /media/motsokasephali/EXTRA2:/festere
+      - /home/motsokasephali:/festere
   web:
     image: dhis2/core:2.35.8
     volumes:
