@@ -1,5 +1,35 @@
 # dhis-docker
 
+<h1>DHIS2 on docker</h1>
+This repo contains a number of docker-compose files to help spin up dockerised dhis2 setups with ease. 
+<h2>A. Setting a training instance</h2>
+Assuming you have installed docker and docker-compose on your host machine, follow the steps below. 
+<ol>
+<li>Clone this repo.<pre><code>git clone https://github.com/lmphatsi/dhis-docker.git</code></pre></li>
+<li>Navigate to the dhis-docker directory<pre><code>cd dhis-docker</code></pre></li>
+<li>Launch the base dhis2 setup. This will spin up two containers: dhis-docker_web and dhis-docker_db. <pre><code>docker-compose up -f docker-compose-training-live-db.yml</code></pre></li>
+<li>When both containers are up, a base dhis2 instance should be accessible at: <pre><code>http://localhost:8080</code></pre></li>
+<li>Go into the db container and create a role and an empty database.
+<pre><code>docker exec -it dhis-docker_db bash</code></pre>
+<pre><code>psql -U postgres</code></pre>
+<pre><code>CREATE DATABASE dhis_lsmoh_235_8;</code></pre>
+<pre><code>CREATE ROLE dhis WITH SUPERUSER;</code></pre>
+Quit: <pre><code>\q</code></pre>
+</li>
+<li>Restore the db dump into the empty dhis db
+<pre><code>psql -U postgres dhis_lsmoh_235_8 < /festere/dhis_db_backup_228_07_06_2022_02_10_01</code></pre>
+And wait ... or better yet, grab a cup of coffee.
+
+</li>
+<li>After a successful db restore, point the dhis2 web app to the new database - dhis_lsmoh_235_8
+  Stop the containers<pre><code>docker-compose stop</code></pre>
+  Update the dhis.conf file <pre><code>nano ./config/dhis2_home/dhis.conf</pre></code> : <pre><code>connection.url = jdbc:postgresql://db/dhis_lsmoh_235_8</code></pre>
+  Startup the containers<pre><code>docker-compose up -f docker-compose-training-live-db.yml</code></pre>
+</li>
+
+
+
+<h2>B. Other (this part is yet to be updated)</h2>
 Running dhis2 on docker
 
 1. Clone the repo to your local machine. _git clone https://github.com/lmphatsi/dhis-docker.git_
