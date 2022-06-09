@@ -8,8 +8,8 @@ Assuming you have installed docker and docker-compose on your host machine, foll
 <li>Clone this repo.<pre><code>git clone https://github.com/lmphatsi/dhis-docker.git</code></pre></li>
 <li>Navigate to the dhis-docker directory<pre><code>cd dhis-docker</code></pre></li>
 <li>
-  Get the dump here: <code><pre>http://xx/dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</pre></code>
-  De-compress it: <code><pre>gzip -d dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</pre></code>
+  Get the dump here: <pre><code>http://xx/dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</code></pre>
+  De-compress it: <pre><code>gzip -d dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</code></pre>
 </li>
 <li>Edit the docker-compose file (docker-compose-training-live-db.yml) in accordance to the location of the db dump. -- see volumes under the *db* container service</li>
 <li>Launch the base dhis2 setup. This will spin up two containers: dhis-docker_web and dhis-docker_db. <pre><code>docker-compose -f docker-compose-training-live-db.yml up</code></pre></li>
