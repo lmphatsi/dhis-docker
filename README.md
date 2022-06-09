@@ -31,7 +31,9 @@ And wait ... or better yet, grab a cup of coffee.
   Update the dhis.conf file <pre><code>nano ./config/dhis2_home/dhis.conf</pre></code> : <pre><code>connection.url = jdbc:postgresql://db/dhis_lsmoh_235_8</code></pre>
   Startup the containers<pre><code>docker-compose -f docker-compose-training-live-db.yml up</code></pre>
 </li>
-
+<li>
+  Done!! Go to <pre><code>http://localhost:8080</code></pre>
+</li>
 
 
 <h2>B. Other (this part is yet to be updated)</h2>
