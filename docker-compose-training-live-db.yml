@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mdillon/postgis:10-alpine
+    command: postgres -c max_locks_per_transaction=100
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dhis2_base
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      ### location of db dump on host: mount point on docker container
+      - /media/motsokasephali/EXTRA2:/festere
+  web:
+    image: dhis2/core:2.35.8
+    volumes:
+      - ./config/dhis2_home/dhis.conf:/DHIS2_home/dhis.conf
+    environment:
+      - WAIT_FOR_DB_CONTAINER=db:5432 -t 0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
