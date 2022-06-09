@@ -7,6 +7,7 @@ Assuming you have installed docker and docker-compose on your host machine, foll
 <ol>
 <li>Clone this repo.<pre><code>git clone https://github.com/lmphatsi/dhis-docker.git</code></pre></li>
 <li>Navigate to the dhis-docker directory<pre><code>cd dhis-docker</code></pre></li>
+<li>Edit the docker-compose file (docker-compose-training-live-db.yml) in accordance to the location of the db dump. -- see volumes under the *db* container service</li>
 <li>Launch the base dhis2 setup. This will spin up two containers: dhis-docker_web and dhis-docker_db. <pre><code>docker-compose up -f docker-compose-training-live-db.yml</code></pre></li>
 <li>When both containers are up, a base dhis2 instance should be accessible at: <pre><code>http://localhost:8080</code></pre></li>
 <li>Go into the db container and create a role and an empty database.
