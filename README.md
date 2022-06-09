@@ -6,7 +6,7 @@ This repo contains a number of docker-compose files to help spin up dockerised d
 Assuming you have installed docker and docker-compose on your host machine, follow the steps below. 
 <ol>
 <li>
-  Get the dump here: <pre><code>http://xx/dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</code></pre>
+  Get the dump here: <pre><code>https://thuto.nul.ls/pt/dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</code></pre>
   De-compress it: <pre><code>gzip -d dhis_db_backup_228_07_06_2022_02_10_01.sql.gz</code></pre>
 </li>
 <li>Clone this repo.<pre><code>git clone https://github.com/lmphatsi/dhis-docker.git</code></pre></li>
