@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: mdillon/postgis:10-alpine
+    restart: unless-stopped
     command: postgres -c max_locks_per_transaction=100
     environment:
       POSTGRES_USER: postgres
@@ -12,6 +13,7 @@ services:
       - /home/motsokasephali:/festere
   web:
     image: dhis2/core:2.35.8
+    restart: unless-stopped
     volumes:
       - ./config/dhis2_home/dhis.conf:/DHIS2_home/dhis.conf
     environment:
